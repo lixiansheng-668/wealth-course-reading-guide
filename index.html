@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>经济下行时代财富课 · 配套阅读指南</title>
+  <meta name="description" content="12课系统课程 · 6个月可执行路径 · 面向经济学小白的经济下行期财富课阅读与思考指南" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <!-- 顶栏 -->
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">财富课阅读指南</span>
+      </a>
+      <nav class="top-nav" aria-label="主导航">
+        <a href="#books">书单</a>
+        <a href="#lessons">课程</a>
+        <a href="#plan">六个月计划</a>
+        <a href="#dashboard">监测表</a>
+      </nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="side-nav" aria-label="打开课节目录">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero" id="top">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">12 课 · 6 个月 · 经济学小白可执行路径</p>
+        <h1>经济下行时代<br />普通人的财富课</h1>
+        <p class="lede">
+          不是再给你一份泛泛书单，而是把「课程搭框架 → 书籍补深度 → 历史验证 → 现实练习」
+          做成真正能执行的阅读指南。书不是主线，课程才是主线。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#lessons">开始第 0 课</a>
+          <a class="btn btn-ghost" href="#plan">看六个月计划</a>
+        </div>
+        <ul class="hero-meta" aria-label="课程要点">
+          <li><strong>目标</strong>理解经济 · 分析历史 · 观察现实 · 判断风险 · 管理家庭财富</li>
+          <li><strong>原则</strong>每学一课 → 读对应章节 → 用现实验证 → 回答思考题</li>
+          <li><strong>买书</strong>先买 3 本，学完一阶段再补，避免买书焦虑</li>
+        </ul>
+      </div>
+
+      <!-- 签名图：负反馈循环 -->
+      <figure class="hero-figure" aria-labelledby="loop-title">
+        <figcaption id="loop-title" class="figure-cap">第 1 课核心机制 · 负反馈循环</figcaption>
+        <svg class="loop-svg" viewBox="0 0 420 420" role="img" aria-label="预期变差导致消费减少、企业收入下降、招聘减少，再回到预期变差的经济负反馈循环图">
+          <defs>
+            <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M 0 0 L 10 5 L 0 10 z" fill="#A63D2F"/>
+            </marker>
+          </defs>
+          <circle cx="210" cy="210" r="168" fill="none" stroke="#C4BFB4" stroke-width="1" stroke-dasharray="2 6"/>
+          <!-- 弧线箭头 -->
+          <path class="loop-path" d="M210 52 A158 158 0 0 1 346 148" fill="none" stroke="#A63D2F" stroke-width="1.25" marker-end="url(#arrow)"/>
+          <path class="loop-path" d="M346 148 A158 158 0 0 1 346 272" fill="none" stroke="#A63D2F" stroke-width="1.25" marker-end="url(#arrow)"/>
+          <path class="loop-path" d="M346 272 A158 158 0 0 1 210 368" fill="none" stroke="#A63D2F" stroke-width="1.25" marker-end="url(#arrow)"/>
+          <path class="loop-path" d="M210 368 A158 158 0 0 1 74 272" fill="none" stroke="#A63D2F" stroke-width="1.25" marker-end="url(#arrow)"/>
+          <path class="loop-path" d="M74 272 A158 158 0 0 1 74 148" fill="none" stroke="#A63D2F" stroke-width="1.25" marker-end="url(#arrow)"/>
+          <path class="loop-path" d="M74 148 A158 158 0 0 1 210 52" fill="none" stroke="#A63D2F" stroke-width="1.25" marker-end="url(#arrow)"/>
+          <!-- 节点 -->
+          <g class="loop-node">
+            <circle cx="210" cy="52" r="36"/>
+            <text x="210" y="48">预期</text>
+            <text x="210" y="64">变差</text>
+          </g>
+          <g class="loop-node">
+            <circle cx="346" cy="148" r="36"/>
+            <text x="346" y="144">居民</text>
+            <text x="346" y="160">少消费</text>
+          </g>
+          <g class="loop-node">
+            <circle cx="346" cy="272" r="36"/>
+            <text x="346" y="268">企业</text>
+            <text x="346" y="284">收入降</text>
+          </g>
+          <g class="loop-node">
+            <circle cx="210" cy="368" r="36"/>
+            <text x="210" y="364">投资</text>
+            <text x="210" y="380">招聘减</text>
+          </g>
+          <g class="loop-node">
+            <circle cx="74" cy="272" r="36"/>
+            <text x="74" y="268">就业</text>
+            <text x="74" y="284">预期差</text>
+          </g>
+          <g class="loop-node">
+            <circle cx="74" cy="148" r="36"/>
+            <text x="74" y="144">更不敢</text>
+            <text x="74" y="160">消费</text>
+          </g>
+          <text class="loop-center-label" x="210" y="202">节俭悖论</text>
+          <text class="loop-center-sub" x="210" y="222">个体理性 · 总体恶化</text>
+        </svg>
+        <p class="figure-note">一个人少花钱是理性的；所有人同时少花钱，整个经济可能反而更差。</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 学习原则 -->
+  <section class="principles" id="principles" aria-labelledby="principles-title">
+    <div class="section-inner">
+      <header class="section-head">
+        <p class="eyebrow">怎么用这份指南</p>
+        <h2 id="principles-title">最重要的学习原则</h2>
+      </header>
+      <div class="principle-grid">
+        <article class="principle bad">
+          <h3>不要这样读</h3>
+          <ul>
+            <li>买一本从头读到尾</li>
+            <li>看不懂继续硬看</li>
+            <li>看完一本再买下一本</li>
+            <li>目标是「成为经济学专业学生」</li>
+          </ul>
+        </article>
+        <article class="principle good">
+          <h3>应该这样走</h3>
+          <ol class="flow-list">
+            <li>我讲一课</li>
+            <li>理解核心逻辑</li>
+            <li>读对应章节</li>
+            <li>用现实案例验证</li>
+            <li>回答几个问题</li>
+            <li>进入下一课</li>
+          </ol>
+        </article>
+        <article class="principle note">
+          <h3>第一阶段目标</h3>
+          <p>不是会推导模型，而是先建立<strong>经济直觉</strong>：能解释「一个国家经济变好，到底是什么意思」，以及「GDP 增长了，为什么身边人可能还觉得日子不好过」。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 书单 -->
+  <section class="books" id="books" aria-labelledby="books-title">
+    <div class="section-inner">
+      <header class="section-head">
+        <p class="eyebrow">先准备这 6 本书</p>
+        <h2 id="books-title">书单与购买节奏</h2>
+        <p class="section-desc">建议先不要买十几本。第一批优先三本，学到后面再补。进阶可另加 Reinhart &amp; Rogoff《This Time Is Different》。</p>
+      </header>
+
+      <div class="book-groups">
+        <div class="book-group">
+          <h3 class="group-label"><span class="tag tag-now">第一批</span>建议优先购买</h3>
+          <ul class="book-list">
+            <li class="book-item" data-priority="1">
+              <span class="book-num">01</span>
+              <div>
+                <h4>经济学原理 · 宏观经济学分册</h4>
+                <p class="book-author">曼昆</p>
+                <p class="book-use">搭框架：GDP、通胀、失业、总需求总供给、政府与央行为何干预。</p>
+              </div>
+            </li>
+            <li class="book-item" data-priority="2">
+              <span class="book-num">02</span>
+              <div>
+                <h4>置身事内：中国政府与经济发展</h4>
+                <p class="book-author">兰小欢</p>
+                <p class="book-use">理解中国：地方政府、财税、投融资与债务、城市化与风险。配合第 9 课主线读物。</p>
+              </div>
+            </li>
+            <li class="book-item" data-priority="3">
+              <span class="book-num">03</span>
+              <div>
+                <h4>逃不开的经济周期</h4>
+                <p class="book-author">拉斯·特维德</p>
+                <p class="book-use">看懂泡沫与周期：繁荣 → 信用扩张 → 拐点 → 去杠杆 → 衰退。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="book-group">
+          <h3 class="group-label"><span class="tag tag-later">第二批</span>学到后面再买</h3>
+          <ul class="book-list">
+            <li class="book-item">
+              <span class="book-num">04</span>
+              <div>
+                <h4>大而不倒</h4>
+                <p class="book-author">安德鲁·罗斯·索尔金</p>
+                <p class="book-use">第 6 课配套：真实人物与事件里看清金融系统与信用突然消失。</p>
+              </div>
+            </li>
+            <li class="book-item">
+              <span class="book-num">05</span>
+              <div>
+                <h4>漫步华尔街</h4>
+                <p class="book-author">伯顿·马尔基尔</p>
+                <p class="book-use">第 10 课：不是教你买哪只股票，而是理解市场如何给资产定价。</p>
+              </div>
+            </li>
+            <li class="book-item">
+              <span class="book-num">06</span>
+              <div>
+                <h4>聪明的投资者</h4>
+                <p class="book-author">本杰明·格雷厄姆</p>
+                <p class="book-use">投资 vs 投机、安全边际、市场先生。第 2 / 8 / 11 课反复用到。现代版含 Jason Zweig 评论。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="buy-advice">
+        <p><strong>现在最不该做的事：</strong>一下买十几本。建议现在只买 <em>宏观经济学 + 置身事内 + 逃不开的经济周期</em>；学到金融危机再买《大而不倒》；最后再买《漫步华尔街》《聪明的投资者》。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 课程总览导航 -->
+  <section class="lessons-wrap" id="lessons">
+    <div class="section-inner lessons-layout">
+      <aside class="side-nav" id="side-nav" aria-label="课节目录">
+        <p class="side-label">课程目录</p>
+        <ol class="lesson-nav">
+          <li><a href="#lesson-0" data-phase="foundation"><span>00</span>怎么学经济学</a></li>
+          <li><a href="#lesson-1" data-phase="foundation"><span>01</span>为什么会衰退</a></li>
+          <li><a href="#lesson-2" data-phase="foundation"><span>02</span>资产 · 负债 · 现金流</a></li>
+          <li><a href="#lesson-3" data-phase="cycle"><span>03</span>经济泡沫怎么形成</a></li>
+          <li><a href="#lesson-4" data-phase="history"><span>04</span>1929 大萧条</a></li>
+          <li><a href="#lesson-5" data-phase="history"><span>05</span>日本失去的几十年</a></li>
+          <li><a href="#lesson-6" data-phase="history"><span>06</span>2008 金融危机</a></li>
+          <li><a href="#lesson-7" data-phase="reality"><span>07</span>普通人会失去什么</a></li>
+          <li><a href="#lesson-8" data-phase="reality"><span>08</span>财富重新分配</a></li>
+          <li><a href="#lesson-9" data-phase="china"><span>09</span>中国经济怎么看</a></li>
+          <li><a href="#lesson-10" data-phase="china"><span>10</span>哪些行业还有机会</a></li>
+          <li><a href="#lesson-11" data-phase="defense"><span>11</span>家庭抗周期系统</a></li>
+          <li><a href="#lesson-12" data-phase="defense"><span>12</span>经济监测系统</a></li>
+        </ol>
+        <div class="phase-legend">
+          <p><span class="dot foundation"></span>搭框架</p>
+          <p><span class="dot cycle"></span>周期机制</p>
+          <p><span class="dot history"></span>历史验证</p>
+          <p><span class="dot reality"></span>现实观察</p>
+          <p><span class="dot china"></span>中国机制</p>
+          <p><span class="dot defense"></span>家庭防御</p>
+        </div>
+      </aside>
+
+      <div class="lessons-main">
+        <header class="section-head">
+          <p class="eyebrow">主线课程</p>
+          <h2>12 课完整阅读与思考指南</h2>
+          <p class="section-desc">每课包含：先学什么 · 配哪本书 · 重点章节 · 可跳过内容 · 理解什么 · 思考题 · 如何联系中国现实。</p>
+        </header>
+
+        <!-- 第0课 -->
+        <article class="lesson" id="lesson-0" data-phase="foundation">
+          <header class="lesson-head">
+            <span class="lesson-num">00</span>
+            <div>
+              <p class="phase-tag">搭框架</p>
+              <h3>怎么学经济学？建立一张经济地图</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <p class="lesson-goal"><strong>课程目标</strong>　先画出经济循环：居民 → 收入 → 消费/储蓄 → 企业收入 → 生产/投资 → 就业 → 再回到居民收入。</p>
+            <div class="two-col">
+              <div>
+                <h4>配套阅读</h4>
+                <p>《经济学原理·宏观经济学》——不要急着深入所有公式，重点理解：</p>
+                <ul>
+                  <li>GDP 是什么</li>
+                  <li>经济增长是什么</li>
+                  <li>通货膨胀是什么</li>
+                  <li>失业是什么</li>
+                  <li>为什么政府和央行会干预经济</li>
+                </ul>
+              </div>
+              <div>
+                <h4>暂时跳过</h4>
+                <p>涉及大量模型推导的部分。第一阶段目标不是成为经济学专业学生，而是<strong>先建立经济直觉</strong>。</p>
+                <h4 class="mt">读完应能回答</h4>
+                <ul class="check-qs">
+                  <li>一个国家的经济变好，到底是什么意思？</li>
+                  <li>GDP 增长了，为什么身边的人可能还是觉得日子不好过？</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 第1课 -->
+        <article class="lesson" id="lesson-1" data-phase="foundation">
+          <header class="lesson-head">
+            <span class="lesson-num">01</span>
+            <div>
+              <p class="phase-tag">搭框架</p>
+              <h3>为什么经济会陷入衰退？</h3>
+              <p class="lesson-badge">整套课程最重要的一课之一</p>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <div class="logic-chain" aria-label="衰退逻辑链">
+              <span>预期变差</span><i></i>
+              <span>居民减少消费</span><i></i>
+              <span>企业收入下降</span><i></i>
+              <span>投资与招聘减少</span><i></i>
+              <span>就业收入预期变差</span><i></i>
+              <span>更不敢消费</span><i></i>
+              <span>负反馈循环</span>
+            </div>
+            <div class="two-col">
+              <div>
+                <h4>配套阅读</h4>
+                <p>《经济学原理·宏观经济学》重点看：GDP、总需求、总供给、消费、投资、经济波动、失业。</p>
+                <h4 class="mt">读书时只抓住一个问题</h4>
+                <blockquote>为什么一个人少花钱是理性的，但所有人同时少花钱，整个经济可能反而更差？</blockquote>
+                <p>这就是<strong>节俭悖论</strong>。</p>
+              </div>
+              <div>
+                <h4>读完应能解释</h4>
+                <p>假设 1000 万个家庭突然决定「未来不确定，今年少消费一点」，为什么最后可能影响餐馆、商场、汽车、培训、旅游、房地产、企业招聘——甚至影响到这些家庭自己的工作。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 第2课 -->
+        <article class="lesson" id="lesson-2" data-phase="foundation">
+          <header class="lesson-head">
+            <span class="lesson-num">02</span>
+            <div>
+              <p class="phase-tag">搭框架</p>
+              <h3>资产、负债与现金流</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <p class="lesson-goal"><strong>核心纠偏</strong>　普通人最容易犯的错误是把「资产」等同于「财富」。</p>
+            <ul class="neq-list">
+              <li>资产很多 <em>≠</em> 现金很多</li>
+              <li>净资产很高 <em>≠</em> 生活安全</li>
+              <li>房子很多 <em>≠</em> 现金流安全</li>
+            </ul>
+            <div class="two-col">
+              <div>
+                <h4>配套阅读</h4>
+                <p>《经济学原理》：利率、储蓄、投资、金融体系——这部分不需要大量阅读。</p>
+                <p>《聪明的投资者》<strong>暂时不要整本读</strong>，只重点理解两个概念：</p>
+                <ol>
+                  <li>投资和投机有什么区别？</li>
+                  <li>什么叫「安全边际」？</li>
+                </ol>
+              </div>
+              <div>
+                <h4>家庭作业：给自己做一张表</h4>
+                <div class="table-wrap">
+                  <table class="simple-table">
+                    <thead><tr><th>项目</th><th>金额</th></tr></thead>
+                    <tbody>
+                      <tr><td>现金</td><td></td></tr>
+                      <tr><td>存款</td><td></td></tr>
+                      <tr><td>房产</td><td></td></tr>
+                      <tr><td>股票/基金</td><td></td></tr>
+                      <tr><td>其他资产</td><td></td></tr>
+                      <tr><td>房贷</td><td></td></tr>
+                      <tr><td>其他负债</td><td></td></tr>
+                      <tr><td>每月固定支出</td><td></td></tr>
+                      <tr><td>每月稳定收入</td><td></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="highlight-q">然后问自己：<strong>如果收入突然减少 30%，我能坚持多久？</strong></p>
+                <p>这比「我到底有多少钱」重要得多。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 第3课 -->
+        <article class="lesson" id="lesson-3" data-phase="cycle">
+          <header class="lesson-head">
+            <span class="lesson-num">03</span>
+            <div>
+              <p class="phase-tag">周期机制</p>
+              <h3>为什么会出现经济泡沫？</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <div class="logic-chain" aria-label="泡沫逻辑链">
+              <span>繁荣</span><i></i>
+              <span>乐观</span><i></i>
+              <span>信用扩张</span><i></i>
+              <span>资产上涨</span><i></i>
+              <span>更多人相信上涨</span><i></i>
+              <span>更多借钱</span><i></i>
+              <span>泡沫</span><i></i>
+              <span>拐点</span><i></i>
+              <span>去杠杆</span><i></i>
+              <span>衰退</span>
+            </div>
+            <div class="two-col">
+              <div>
+                <h4>核心阅读</h4>
+                <p>《逃不开的经济周期》——重点关注繁荣到衰退的完整链条。</p>
+                <h4 class="mt">正确的问题不是</h4>
+                <p class="strike">房价涨是不是泡沫？</p>
+                <h4>而是</h4>
+                <p>房价上涨是因为收入、人口、租金和需求变化？<br />还是大家因为相信房价继续上涨，所以不断借钱买房？</p>
+                <p>这是两个完全不同的机制。</p>
+              </div>
+              <div>
+                <h4>读书任务：只抓住三个词</h4>
+                <ol class="three-words">
+                  <li><strong>预期</strong>　人们为什么相信未来继续上涨？</li>
+                  <li><strong>信用</strong>　上涨过程中有多少力量来自借钱？</li>
+                  <li><strong>杠杆</strong>　如果价格下跌 20%，谁会被迫卖？</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 第4课 -->
+        <article class="lesson" id="lesson-4" data-phase="history">
+          <header class="lesson-head">
+            <span class="lesson-num">04</span>
+            <div>
+              <p class="phase-tag">历史验证</p>
+              <h3>1929 年美国大萧条</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <p>不要只看「股市崩盘了」。真正要看的是传导链：</p>
+            <div class="logic-chain">
+              <span>资产下跌</span><i></i>
+              <span>银行受损</span><i></i>
+              <span>信贷收缩</span><i></i>
+              <span>企业融资困难</span><i></i>
+              <span>企业倒闭</span><i></i>
+              <span>失业增加</span><i></i>
+              <span>消费下降</span><i></i>
+              <span>经济进一步恶化</span>
+            </div>
+            <div class="two-col">
+              <div>
+                <h4>建议增加一本</h4>
+                <p><strong>《1929 年大崩盘》——加尔布雷思</strong></p>
+                <p>你会发现：泡沫中的人，并不知道自己正在泡沫中。他们通常相信「这次不一样」——这个思维方式在历史上反复出现。</p>
+              </div>
+              <div>
+                <h4>进阶（可后置）</h4>
+                <p>想继续深入金融危机的长期规律，再读 Reinhart &amp; Rogoff《This Time Is Different》：研究不同国家和时期金融、债务危机在起因与后果上的相似性。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 第5课 -->
+        <article class="lesson" id="lesson-5" data-phase="history">
+          <header class="lesson-head">
+            <span class="lesson-num">05</span>
+            <div>
+              <p class="phase-tag">历史验证</p>
+              <h3>日本「失去的几十年」</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <p class="lesson-goal"><strong>本课先不急着买书。</strong>很多关于日本经济的书直接读会比较难。先把课程机制学明白。</p>
+            <h4>什么叫资产负债表衰退？</h4>
+            <div class="balance-demo">
+              <div class="bal-card">
+                <p class="bal-label">泡沫前</p>
+                <p>资产：10 亿</p>
+                <p>负债：6 亿</p>
+                <p class="bal-net">净资产：4 亿</p>
+              </div>
+              <div class="bal-arrow" aria-hidden="true">→</div>
+              <div class="bal-card down">
+                <p class="bal-label">泡沫破裂后</p>
+                <p>资产：7 亿</p>
+                <p>负债：6 亿</p>
+                <p class="bal-net">净资产：1 亿</p>
+              </div>
+            </div>
+            <p>这时企业最关心的可能不再是「怎么扩大生产」，而变成<strong>先把债还掉</strong>。于是：企业还债 → 不愿投资扩张 → 招聘减少 → 工资增长缓慢 → 居民消费谨慎 → 企业更不愿投资。</p>
+            <h4 class="mt">推荐阅读方式</h4>
+            <p>先看课程，然后查阅：日本房地产泡沫、股市泡沫、银行坏账、企业去杠杆、通缩、老龄化。<strong>这一课先不要追求「读完一本书」，重点是把机制搞懂。</strong></p>
+          </div>
+        </article>
+
+        <!-- 第6课 -->
+        <article class="lesson" id="lesson-6" data-phase="history">
+          <header class="lesson-head">
+            <span class="lesson-num">06</span>
+            <div>
+              <p class="phase-tag">历史验证</p>
+              <h3>2008 年金融危机</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <div class="two-col">
+              <div>
+                <h4>配套书</h4>
+                <p><strong>《大而不倒》</strong>——你会第一次真正看到金融系统是怎么运转的。</p>
+                <div class="logic-chain vertical">
+                  <span>房地产</span><i></i>
+                  <span>房贷</span><i></i>
+                  <span>金融机构</span><i></i>
+                  <span>信用体系</span><i></i>
+                  <span>企业融资</span><i></i>
+                  <span>就业</span><i></i>
+                  <span>普通人</span>
+                </div>
+              </div>
+              <div>
+                <h4>读书方法</h4>
+                <p>不要纠结「这个银行叫什么名字」。重点画出关系：</p>
+                <ul>
+                  <li>谁欠谁的钱？</li>
+                  <li>谁给谁提供融资？</li>
+                  <li>谁的资产依赖房地产？</li>
+                  <li>谁一倒下会影响其他人？</li>
+                </ul>
+                <p class="highlight-q">金融危机最可怕的地方不是「亏钱」，而是<strong>信用突然消失</strong>。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 第7课 -->
+        <article class="lesson" id="lesson-7" data-phase="reality">
+          <header class="lesson-head">
+            <span class="lesson-num">07</span>
+            <div>
+              <p class="phase-tag">现实观察</p>
+              <h3>经济下行时普通人会失去什么？</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <p>这一课先不要买新书。用前面的知识开始观察现实。通常顺序可能是：</p>
+            <div class="logic-chain">
+              <span>招聘减少</span><i></i>
+              <span>跳槽困难</span><i></i>
+              <span>奖金下降</span><i></i>
+              <span>工资增长变慢</span><i></i>
+              <span>裁员增加</span><i></i>
+              <span>消费降级</span><i></i>
+              <span>资产价格承压</span><i></i>
+              <span>人生决策推迟</span>
+            </div>
+            <p class="muted">当然，每次危机的顺序和程度都不完全一样。</p>
+            <h4>你的任务：观察你所在的行业</h4>
+            <ol class="observe-list">
+              <li>公司最近是在扩张还是收缩？</li>
+              <li>招聘人数增加还是减少？</li>
+              <li>客户是在增加预算还是压缩预算？</li>
+              <li>哪些岗位最容易被削减？</li>
+              <li>哪些技能依然有人愿意花钱？</li>
+            </ol>
+            <p class="highlight-q">从这一课开始，<strong>经济学进入你的现实生活</strong>。</p>
+          </div>
+        </article>
+
+        <!-- 第8课 -->
+        <article class="lesson" id="lesson-8" data-phase="reality">
+          <header class="lesson-head">
+            <span class="lesson-num">08</span>
+            <div>
+              <p class="phase-tag">现实观察</p>
+              <h3>财富为什么会重新分配？</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <p>经济下行不是「所有人一起损失 20%」。现实更像：</p>
+            <div class="two-col">
+              <div class="split-panel risk">
+                <h4>高杠杆路径</h4>
+                <p>高杠杆 → 资产下跌 → 现金流紧张 → <strong>被迫卖出</strong></p>
+              </div>
+              <div class="split-panel safe">
+                <h4>等待能力路径</h4>
+                <p>低杠杆 + 稳定收入 + 现金储备 → <strong>拥有等待能力</strong></p>
+              </div>
+            </div>
+            <p class="highlight-q">危机时期最重要的不是「谁最聪明」，而往往是<strong>谁没有被迫出局</strong>。</p>
+            <h4 class="mt">配套阅读</h4>
+            <p>继续读《聪明的投资者》，这次重点看：安全边际、市场先生、投资与投机、风险控制。</p>
+          </div>
+        </article>
+
+        <!-- 第9课 -->
+        <article class="lesson" id="lesson-9" data-phase="china">
+          <header class="lesson-head">
+            <span class="lesson-num">09</span>
+            <div>
+              <p class="phase-tag">中国机制</p>
+              <h3>中国经济怎么看？</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <p class="lesson-goal">这一课开始进入<strong>《置身事内》</strong>。不要一口气读完，按照课程来读。</p>
+            <ol class="step-list">
+              <li>
+                <strong>第 2 章 · 财税与政府行为</strong>
+                <span>分税制 · 土地财政 · 中央与地方财政关系</span>
+              </li>
+              <li>
+                <strong>第 3 章 · 政府投融资与债务</strong>
+                <span>城投 · 土地金融 · 地方债务</span>
+              </li>
+              <li>
+                <strong>第 5 章 · 城市化与不平衡</strong>
+                <span>房价 · 居民债务 · 城市化</span>
+              </li>
+              <li>
+                <strong>第 6 章 · 债务与风险</strong>
+                <span>债务与经济衰退 · 中国的债务与风险——与整套课程高度相关</span>
+              </li>
+            </ol>
+            <p class="muted">《置身事内》的目录本身就从地方政府权力、财税、投融资与债务，延伸到城市化、债务风险和国内国际失衡，非常适合作为理解中国经济机制的主线读物。</p>
+          </div>
+        </article>
+
+        <!-- 第10课 -->
+        <article class="lesson" id="lesson-10" data-phase="china">
+          <header class="lesson-head">
+            <span class="lesson-num">10</span>
+            <div>
+              <p class="phase-tag">中国机制</p>
+              <h3>经济下行时，哪些行业还有机会？</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <div class="two-col">
+              <div>
+                <h4>开始读《漫步华尔街》</h4>
+                <p>重点不是「我要买什么股票」，而是学习<strong>市场是如何给资产定价的</strong>。</p>
+                <ul class="neq-list">
+                  <li>好公司 <em>≠</em> 好投资</li>
+                  <li>价格便宜 <em>≠</em> 一定值得买</li>
+                  <li>资产上涨 <em>≠</em> 风险降低</li>
+                </ul>
+              </div>
+              <div>
+                <h4>同时观察现实</h4>
+                <p><strong>消费</strong>：是否更追求性价比？在哪些地方省钱？哪些消费依然增长？</p>
+                <p><strong>企业</strong>：扩张还是降本？哪些行业能提高效率？哪些依赖冲动消费？</p>
+                <p class="highlight-q">经济下行不是「所有需求消失」，而是<strong>需求重新分配</strong>。</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 第11课 -->
+        <article class="lesson" id="lesson-11" data-phase="defense">
+          <header class="lesson-head">
+            <span class="lesson-num">11</span>
+            <div>
+              <p class="phase-tag">家庭防御</p>
+              <h3>普通家庭的抗周期财富系统</h3>
+              <p class="lesson-badge">整套课程最实用的一课</p>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <p>前面的经济学、历史和金融知识，最终都要回到这里。建立你的<strong>四层防线</strong>：</p>
+            <div class="defense-grid">
+              <div class="defense-card">
+                <span class="defense-num">第一层</span>
+                <h4>现金</h4>
+                <p>如果收入中断，你能活多久？</p>
+              </div>
+              <div class="defense-card">
+                <span class="defense-num">第二层</span>
+                <h4>负债</h4>
+                <p>如果收入下降 30%，还能不能还债？</p>
+              </div>
+              <div class="defense-card">
+                <span class="defense-num">第三层</span>
+                <h4>收入</h4>
+                <p>你的收入是不是只有一个来源？</p>
+              </div>
+              <div class="defense-card">
+                <span class="defense-num">第四层</span>
+                <h4>技能</h4>
+                <p>如果现在的行业不好，你的能力还能卖给谁？</p>
+              </div>
+            </div>
+            <h4 class="mt">这一阶段重点读</h4>
+            <p>《聪明的投资者》——它不是教你「赚钱秘籍」，而是在训练一个很重要的思维：<strong>首先不要出现无法承受的大亏损。</strong></p>
+          </div>
+        </article>
+
+        <!-- 第12课 -->
+        <article class="lesson" id="lesson-12" data-phase="defense">
+          <header class="lesson-head">
+            <span class="lesson-num">12</span>
+            <div>
+              <p class="phase-tag">家庭防御</p>
+              <h3>建立自己的经济监测系统</h3>
+            </div>
+          </header>
+          <div class="lesson-body">
+            <p>从这一课开始，你不再只是读书，而是建立自己的<strong>经济仪表盘</strong>。建议每个月记录：</p>
+            <div class="table-wrap">
+              <table class="simple-table dash-table">
+                <thead><tr><th>指标</th><th>观察什么</th></tr></thead>
+                <tbody>
+                  <tr><td>招聘</td><td>岗位增加还是减少</td></tr>
+                  <tr><td>工资</td><td>是否还在上涨</td></tr>
+                  <tr><td>企业</td><td>利润和投资是否改善</td></tr>
+                  <tr><td>消费</td><td>消费者是否更谨慎</td></tr>
+                  <tr><td>房地产</td><td>成交是否活跃</td></tr>
+                  <tr><td>信贷</td><td>企业和居民是否愿意借钱</td></tr>
+                  <tr><td>物价</td><td>通胀还是通缩压力</td></tr>
+                  <tr><td>利率</td><td>资金成本变化</td></tr>
+                  <tr><td>自己</td><td>现金流和负债是否安全</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 六个月计划 -->
+  <section class="plan" id="plan" aria-labelledby="plan-title">
+    <div class="section-inner">
+      <header class="section-head">
+        <p class="eyebrow">可执行路径</p>
+        <h2 id="plan-title">6 个月学习计划</h2>
+        <p class="section-desc">按阶段推进，不要跳课堆书。每一阶段结束时，你应该能用自己的话讲清该阶段的核心机制。</p>
+      </header>
+
+      <ol class="timeline">
+        <li class="tl-item">
+          <div class="tl-marker">第 1 月</div>
+          <div class="tl-content">
+            <h3>搭框架</h3>
+            <p class="tl-lessons">第 0 · 1 · 2 课</p>
+            <p><strong>配套</strong>《经济学原理·宏观经济学》</p>
+            <p class="tl-goal"><strong>目标</strong>　看懂经济新闻里的基本词汇。</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-marker">第 2 月</div>
+          <div class="tl-content">
+            <h3>周期与泡沫</h3>
+            <p class="tl-lessons">第 3 · 4 课</p>
+            <p><strong>配套</strong>《逃不开的经济周期》</p>
+            <p class="tl-goal"><strong>目标</strong>　看懂泡沫是怎么形成和破裂的。</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-marker">第 3 月</div>
+          <div class="tl-content">
+            <h3>历史危机</h3>
+            <p class="tl-lessons">第 5 · 6 课</p>
+            <p><strong>配套</strong>日本案例资料 + 《大而不倒》</p>
+            <p class="tl-goal"><strong>目标</strong>　看懂「资产泡沫 → 银行 → 信用 → 实体经济」。</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-marker">第 4 月</div>
+          <div class="tl-content">
+            <h3>风险意识</h3>
+            <p class="tl-lessons">第 7 · 8 课</p>
+            <p><strong>配套</strong>《聪明的投资者》前半部分</p>
+            <p class="tl-goal"><strong>目标</strong>　建立风险意识和安全边际意识。</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-marker">第 5 月</div>
+          <div class="tl-content">
+            <h3>中国机制</h3>
+            <p class="tl-lessons">第 9 课</p>
+            <p><strong>配套</strong>《置身事内》第 2 · 3 · 5 · 6 · 7 章</p>
+            <p class="tl-goal"><strong>目标</strong>　理解房地产、地方财政和债务之间的关系。</p>
+          </div>
+        </li>
+        <li class="tl-item">
+          <div class="tl-marker">第 6 月</div>
+          <div class="tl-content">
+            <h3>家庭系统</h3>
+            <p class="tl-lessons">第 10 · 11 · 12 课</p>
+            <p><strong>配套</strong>《漫步华尔街》+《聪明的投资者》</p>
+            <p class="tl-goal"><strong>目标</strong>　建立家庭资产负债表、现金流表和经济观察系统。</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="reading-order">
+        <h3>最终阅读顺序</h3>
+        <ol class="order-steps">
+          <li><span>阶段一</span>第 0～2 课 →《经济学原理·宏观经济学》</li>
+          <li><span>阶段二</span>第 3～5 课 →《逃不开的经济周期》</li>
+          <li><span>阶段三</span>1929 / 日本 / 2008 →《1929 年大崩盘》《大而不倒》</li>
+          <li><span>阶段四</span>中国房地产、地方财政、债务 →《置身事内》</li>
+          <li><span>阶段五</span>资产、市场、投资 →《漫步华尔街》→《聪明的投资者》</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 监测表 -->
+  <section class="dashboard" id="dashboard" aria-labelledby="dash-title">
+    <div class="section-inner">
+      <header class="section-head">
+        <p class="eyebrow">第 12 课工具</p>
+        <h2 id="dash-title">个人经济仪表盘 · 月度记录模板</h2>
+        <p class="section-desc">可打印或复制到笔记里，每月填一次。最后一行永远是「自己」——外部指标再热闹，也不如你的现金流安全重要。</p>
+      </header>
+      <div class="dash-print" id="dash-print">
+        <div class="dash-header-row">
+          <span>月份：__________</span>
+          <span>记录人：__________</span>
+        </div>
+        <div class="table-wrap">
+          <table class="simple-table">
+            <thead>
+              <tr><th>指标</th><th>观察什么</th><th>本月判断</th><th>证据 / 备注</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>招聘</td><td>岗位增加还是减少</td><td></td><td></td></tr>
+              <tr><td>工资</td><td>是否还在上涨</td><td></td><td></td></tr>
+              <tr><td>企业</td><td>利润和投资是否改善</td><td></td><td></td></tr>
+              <tr><td>消费</td><td>消费者是否更谨慎</td><td></td><td></td></tr>
+              <tr><td>房地产</td><td>成交是否活跃</td><td></td><td></td></tr>
+              <tr><td>信贷</td><td>企业和居民是否愿意借钱</td><td></td><td></td></tr>
+              <tr><td>物价</td><td>通胀还是通缩压力</td><td></td><td></td></tr>
+              <tr><td>利率</td><td>资金成本变化</td><td></td><td></td></tr>
+              <tr><td>自己</td><td>现金流和负债是否安全</td><td></td><td></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="button" id="print-dash">打印这张表</button>
+    </div>
+  </section>
+
+  <!-- 收尾 -->
+  <section class="closing" aria-labelledby="closing-title">
+    <div class="section-inner">
+      <h2 id="closing-title">接下来最适合你的学习方式</h2>
+      <p>以后每一课按照这个闭环走：</p>
+      <ol class="closing-loop">
+        <li>详细讲课</li>
+        <li>画因果关系图</li>
+        <li>对应读哪几章</li>
+        <li>出几个小白思考题</li>
+        <li>你回答后纠正理解</li>
+        <li>联系现实经济</li>
+      </ol>
+      <p class="closing-punch">半年之后，你得到的就不只是「我看过几本经济学书」，而是一套真正属于你自己的：<strong>理解经济 → 分析历史 → 观察现实 → 判断风险 → 管理家庭财富</strong> 的思维框架。</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="section-inner">
+      <p>《经济下行时代财富课 · 配套阅读指南》· 基于 12 课课程规划整理</p>
+      <p class="muted">学习原则：课程是主线，书是加深理解的工具。先建立直觉，再钻深度。</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

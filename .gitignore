@@ -1,0 +1,9 @@
+# Local / tooling — do not publish
+.playwright-cli/
+*.png
+pw_*.js
+pw_*.txt
+chatgpt_page.txt
+gh_login*.txt
+node_modules/
+.DS_Store
