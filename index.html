@@ -355,25 +355,9 @@
                 </ol>
               </div>
               <div>
-                <h4>家庭作业：给自己做一张表</h4>
-                <div class="table-wrap">
-                  <table class="simple-table">
-                    <thead><tr><th>项目</th><th>金额</th></tr></thead>
-                    <tbody>
-                      <tr><td>现金</td><td></td></tr>
-                      <tr><td>存款</td><td></td></tr>
-                      <tr><td>房产</td><td></td></tr>
-                      <tr><td>股票/基金</td><td></td></tr>
-                      <tr><td>其他资产</td><td></td></tr>
-                      <tr><td>房贷</td><td></td></tr>
-                      <tr><td>其他负债</td><td></td></tr>
-                      <tr><td>每月固定支出</td><td></td></tr>
-                      <tr><td>每月稳定收入</td><td></td></tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p class="highlight-q">然后问自己：<strong>如果收入突然减少 30%，我能坚持多久？</strong></p>
-                <p>这比「我到底有多少钱」重要得多。</p>
+                <h4>家庭作业：算算「收入突然减少，我能坚持多久」</h4>
+                <div id="runway-calc" class="runway"></div>
+                <p class="highlight-q">这比「我到底有多少钱」重要得多。</p>
               </div>
             </div>
           </div>
@@ -813,10 +797,17 @@
         <h2 id="dash-title">个人经济仪表盘 · 月度记录模板</h2>
         <p class="section-desc">可打印或复制到笔记里，每月填一次。最后一行永远是「自己」——外部指标再热闹，也不如你的现金流安全重要。</p>
       </header>
+      <div class="dash-actions">
+        <button class="btn btn-ghost" type="button" id="dash-clear">清空本月</button>
+      </div>
       <div class="dash-print" id="dash-print">
         <div class="dash-header-row">
-          <span>月份：__________</span>
-          <span>记录人：__________</span>
+          <label class="dash-field">月份
+            <input type="month" id="dash-month" class="dash-input" />
+          </label>
+          <label class="dash-field">记录人
+            <input type="text" id="dash-name" class="dash-input" placeholder="可选" />
+          </label>
         </div>
         <div class="table-wrap">
           <table class="simple-table">
@@ -865,6 +856,7 @@
     </div>
   </footer>
 
+  <script src="storage.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

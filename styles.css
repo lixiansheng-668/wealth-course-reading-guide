@@ -1374,12 +1374,341 @@ a:hover {
   }
 }
 
+/* ——— interaction pass ——— */
+.progress-panel {
+  margin: 0 0 1.5rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.55rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.progress-count {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--ink);
+}
+
+.progress-track {
+  height: 4px;
+  background: var(--paper-deep);
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0;
+  background: var(--rust);
+  transition: width 0.25s ease;
+}
+
+.lesson-done {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  cursor: pointer;
+  grid-column: 2;
+  justify-self: start;
+}
+
+.lesson-done input {
+  accent-color: var(--rust);
+}
+
+.lesson.is-done .lesson-head {
+  background: linear-gradient(90deg, rgba(107, 127, 110, 0.12), transparent 60%);
+}
+
+.lesson.is-done .lesson-num {
+  color: var(--sage);
+}
+
+.lesson-nav a.is-done span::after {
+  content: "✓";
+  margin-left: 0.2rem;
+  color: var(--sage);
+  font-size: 0.7rem;
+}
+
+/* probe */
+.probe {
+  margin-top: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper-soft);
+}
+
+.probe-q {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.probe-input-label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+.probe-input {
+  display: block;
+  width: 100%;
+  margin-top: 0.4rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  font: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-radius: var(--radius);
+  resize: vertical;
+}
+
+.probe-reveal {
+  min-height: 38px;
+  font-size: 0.88rem;
+}
+
+.probe-answer {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--rule-strong);
+}
+
+.probe-answer-label {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--rust);
+  text-transform: uppercase;
+}
+
+.probe-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.probe-checks {
+  list-style: none;
+  margin: 0 0 0.5rem;
+  padding: 0;
+}
+
+.probe-checks li {
+  margin: 0.35rem 0;
+}
+
+.probe-checks label {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.probe-checks input {
+  margin-top: 0.35rem;
+  accent-color: var(--rust);
+}
+
+/* runway */
+.runway {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid var(--rule);
+  background: var(--paper-soft);
+}
+
+.runway-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.runway-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.runway-grid input,
+.dash-input {
+  border: 1px solid var(--rule-strong);
+  background: var(--paper);
+  padding: 0.45rem 0.55rem;
+  font: inherit;
+  font-size: 0.95rem;
+  border-radius: var(--radius);
+  color: var(--ink);
+}
+
+.runway-slider-label {
+  display: block;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-bottom: 0.75rem;
+}
+
+.runway-slider-label strong {
+  color: var(--rust);
+  font-family: var(--font-mono);
+}
+
+.runway-slider-label input[type="range"] {
+  display: block;
+  width: 100%;
+  margin-top: 0.45rem;
+  accent-color: var(--rust);
+}
+
+.runway-result {
+  border-top: 1px solid var(--rule);
+  padding-top: 0.75rem;
+}
+
+.runway-months {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+}
+
+.runway-months strong {
+  color: var(--rust);
+  font-size: 1.35rem;
+}
+
+.runway-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.runway-note.is-risk {
+  color: var(--rust);
+}
+
+.runway-note.is-tight {
+  color: #8b5e3c;
+}
+
+.runway-note.is-ok {
+  color: var(--sage);
+}
+
+/* logic chain steps */
+.logic-chain.is-stepped span.chain-step {
+  opacity: 0.28;
+  border-color: var(--rule);
+  transition: opacity 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.logic-chain.is-stepped span.chain-step.is-lit {
+  opacity: 1;
+  border-color: var(--rust-soft);
+  color: var(--ink);
+  background: rgba(166, 61, 47, 0.06);
+}
+
+.logic-chain.is-stepped i {
+  opacity: 0.35;
+}
+
+.logic-chain.is-stepped span.chain-step.is-lit + i,
+.logic-chain.is-stepped span.chain-step.is-lit ~ span.chain-step.is-lit {
+  opacity: 1;
+}
+
+.chain-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.chain-controls .btn {
+  min-height: 36px;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+}
+
+/* dashboard inputs */
+.dash-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.65rem;
+}
+
+.dash-actions .btn {
+  min-height: 36px;
+  font-size: 0.85rem;
+}
+
+.dash-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.dash-input {
+  min-width: 9rem;
+}
+
+.dash-print .dash-input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  border-bottom: 1px solid var(--rule-strong);
+  background: transparent;
+  border-radius: 0;
+  padding: 0.2rem 0;
+}
+
+.dash-print .dash-call {
+  min-width: 6rem;
+}
+
+@media (max-width: 860px) {
+  .runway-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-done {
+    grid-column: 1;
+  }
+}
+
 /* print: dashboard only-friendly */
 @media print {
   .topbar,
   .side-nav,
   .hero-actions,
   #print-dash,
+  #dash-clear,
+  .dash-actions,
+  .progress-panel,
+  .probe-reveal,
+  .chain-controls,
+  .lesson-done,
   .site-footer,
   .nav-toggle {
     display: none !important;
@@ -1394,5 +1723,9 @@ a:hover {
   .dash-print,
   .book-item {
     break-inside: avoid;
+  }
+
+  .probe-answer[hidden] {
+    display: none !important;
   }
 }
