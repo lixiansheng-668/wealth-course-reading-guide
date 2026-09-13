@@ -1,14 +1,24 @@
 ---
 feature: interaction-pass
-status: designed
+status: delivered
 updated: 2026-09-12
 branch: feature/interaction-pass
-commits: 0c79ae1..<pending>
+commits: 0c79ae1..<head-on-delivery>
 ---
 
 # 交互化改造：财富课阅读指南
 
 ## Report
+
+**What was built** — 在保持纸本讲义视觉的前提下，把 12 课站从「可读」升级为「可练」：课目完成勾选与总进度条、5 处思考题自测（含行业观察清单）、第 2 课「收入下降能撑多久」计算器、5 条逻辑链逐步点亮、月度经济仪表盘可编辑持久化。状态全部落在 `localStorage`（`wealth-course:v1:*`），无后端。
+
+**Verification** — `node verify-interactions.js`（playwright-core + 本机 Chrome，file:// 打开）17 项断言全部 PASS：进度勾选与刷新恢复、probe 展开/笔记/l7 勾选持久化、计算器在收入 10000/支出 8000/下降 30% 时输出约 30 个月并持久化、逻辑链点亮与重置、仪表盘 month/call/note 刷新保留。评审确认 T1–T7 验收均满足，无 critical。
+
+**Journey log**
+- Probe 勾选最初走 400ms 防抖，导致「立刻刷新」测不过；改为 checkbox/reveal 即时写入，textarea 仍防抖。
+- Spec 里 runway 草稿写过 `debt`，实现按公式落地为可变现资产 `assets`（cash + liquidAssets），更贴「能撑多久」。
+- 全量逻辑链恰好 5 条（课 1/3/4/6/7），与 T4 覆盖 1:1，无需再改 HTML 结构。
+- 评审指出整文件 `var` 与基线 `const/let` 风格不一致；属 minor，未做大范围重写以免引入回归。
 
 ## [S1] Problem
 
@@ -150,10 +160,10 @@ else months = liquid / abs(surplus)  // 可撑月数
 
 ## Tasks
 
-- [ ] T1: 存储助手与进度条/课目完成勾选 — acceptance: 勾选一课后刷新仍完成；侧栏与顶栏进度一致 (covers: S2.1, S2.2)
-- [ ] T2: Probe 组件与 5 处思考题自测 — acceptance: 展开参考答案与笔记刷新后保持；l7 勾选持久化 (covers: S2.1, S2.3; depends: T1)
-- [ ] T3: 第 2 课收入撑多久计算器 — acceptance: 调整滑杆/输入后月数与风险文案即时更新，刷新后数值仍在 (covers: S2.1, S2.4; depends: T1)
-- [ ] T4: 逻辑链逐步点亮（≥5 条链） — acceptance: 按「下一步」逐节点亮，「重置」恢复 (covers: S2.5)
-- [ ] T5: 仪表盘可编辑+月份+清空 — acceptance: 填写判断/备注刷新保留；打印仍可用；清空有确认 (covers: S2.1, S2.6, S2.8)
-- [ ] T6: 样式与无障碍打磨 — acceptance: 新组件与纸本风格一致；probe 有 aria-expanded；进度条有 role (covers: S2.7; depends: T1, T2, T3, T4, T5)
-- [ ] T7: 本地验证脚本（Playwright 打开 file/静态服务） — acceptance: 脚本断言进度勾选、probe 展开、计算器输出、仪表盘写入四条主路径 (covers: S2.2–S2.6; depends: T6)
+- [x] T1: 存储助手与进度条/课目完成勾选 — acceptance: 勾选一课后刷新仍完成；侧栏与顶栏进度一致 (covers: S2.1, S2.2)
+- [x] T2: Probe 组件与 5 处思考题自测 — acceptance: 展开参考答案与笔记刷新后保持；l7 勾选持久化 (covers: S2.1, S2.3; depends: T1)
+- [x] T3: 第 2 课收入撑多久计算器 — acceptance: 调整滑杆/输入后月数与风险文案即时更新，刷新后数值仍在 (covers: S2.1, S2.4; depends: T1)
+- [x] T4: 逻辑链逐步点亮（≥5 条链） — acceptance: 按「下一步」逐节点亮，「重置」恢复 (covers: S2.5)
+- [x] T5: 仪表盘可编辑+月份+清空 — acceptance: 填写判断/备注刷新保留；打印仍可用；清空有确认 (covers: S2.1, S2.6, S2.8)
+- [x] T6: 样式与无障碍打磨 — acceptance: 新组件与纸本风格一致；probe 有 aria-expanded；进度条有 role (covers: S2.7; depends: T1, T2, T3, T4, T5)
+- [x] T7: 本地验证脚本（Playwright 打开 file/静态服务） — acceptance: 脚本断言进度勾选、probe 展开、计算器输出、仪表盘写入四条主路径 (covers: S2.2–S2.6; depends: T6)

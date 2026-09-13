@@ -1631,9 +1631,8 @@ a:hover {
   opacity: 0.35;
 }
 
-.logic-chain.is-stepped span.chain-step.is-lit + i,
-.logic-chain.is-stepped span.chain-step.is-lit ~ span.chain-step.is-lit {
-  opacity: 1;
+.logic-chain.is-stepped span.chain-step.is-lit + i {
+  opacity: 0.85;
 }
 
 .chain-controls {

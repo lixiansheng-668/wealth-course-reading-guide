@@ -135,7 +135,10 @@
     var bar = document.getElementById("progress-bar");
     var fill = document.getElementById("progress-fill");
     if (doneEl) doneEl.textContent = String(done);
-    if (bar) bar.setAttribute("aria-valuenow", String(done));
+    if (bar) {
+      bar.setAttribute("aria-valuenow", String(done));
+      bar.setAttribute("aria-valuetext", "已完成 " + done + " / " + TOTAL_LESSONS + " 课");
+    }
     if (fill) fill.style.width = (done / TOTAL_LESSONS) * 100 + "%";
     lessonLinks.forEach(function (link) {
       var id = (link.getAttribute("href") || "").replace("#lesson-", "");
@@ -389,9 +392,6 @@
   /* ——— S2.5 logic chains ——— */
   function initChains() {
     document.querySelectorAll(".logic-chain").forEach(function (chain, index) {
-      if (chain.classList.contains("vertical") && chain.querySelector("span")) {
-        /* still support */
-      }
       var spans = Array.from(chain.querySelectorAll(":scope > span"));
       if (spans.length < 2) return;
 
