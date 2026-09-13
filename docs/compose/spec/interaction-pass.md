@@ -3,7 +3,7 @@ feature: interaction-pass
 status: delivered
 updated: 2026-09-12
 branch: feature/interaction-pass
-commits: 0c79ae1..<head-on-delivery>
+commits: 0c79ae12ef122efbdc9c2c2e6685cfc23ccb7bc0..bf2eb0958b511f8d75e09f6e3d3e3bd9cac7e60c
 ---
 
 # 交互化改造：财富课阅读指南
@@ -43,7 +43,7 @@ wealth-course:v1:probes
 
 // runway calculator
 wealth-course:v1:runway
-{ "cash": 0, "debt": 0, "expense": 0, "income": 0, "dropPct": 30 }
+{ "cash": 0, "assets": 0, "expense": 0, "income": 0, "dropPct": 30 }
 
 // dashboard
 wealth-course:v1:dashboard
