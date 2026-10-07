@@ -8,6 +8,8 @@ const CASES = [
   { id: "lesson-3", steps: 9, texts: ["击鼓传花", "+67%"] },
   { id: "lesson-4", steps: 7, texts: ["9000 家银行", "输水管网"] },
   { id: "lesson-5", steps: 5, texts: ["12 年", "全镇一起还房贷"] },
+  { id: "lesson-6", steps: 6, texts: ["30 倍杠杆", "担保书"] },
+  { id: "lesson-7", steps: 7, texts: ["没有发生的收入", "反向运行的扶梯"] },
 ];
 
 const URL = "http://127.0.0.1:8931/index.html";
