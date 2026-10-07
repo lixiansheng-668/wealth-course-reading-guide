@@ -60,12 +60,14 @@ function assert(cond, msg) {
     assert((await page.locator("#" + c.id + " .chain-step.is-lit").count()) === 1, c.id + " chain lights up");
   }
 
-  // probes still injected
-  await page.waitForSelector('.probe[data-probe="l0-map"]');
-  await page.waitForSelector('.probe[data-probe="l1-thrift"]');
-  await page.waitForSelector('.probe[data-probe="l3-bubble"]');
-  console.log("PASS: probes injected (l0-map, l1-thrift, l3-bubble)");
-  passed++;
+  // probes: one per lesson
+  const PROBE_IDS = ["l0-map", "l1-thrift", "l2-runway", "l3-bubble", "l4-bankrun", "l5-repay", "l6-credit", "l7-observe", "l8-wait", "l9-land", "l10-flow", "l11-stress", "l12-dashboard"];
+  for (const id of PROBE_IDS) {
+    await page.waitForSelector('.probe[data-probe="' + id + '"]');
+  }
+  assert((await page.locator(".probe").count()) === PROBE_IDS.length, PROBE_IDS.length + " probes injected (one per lesson)");
+  await page.locator('.probe[data-probe="l2-runway"] .probe-reveal').click();
+  assert(await page.locator('.probe[data-probe="l2-runway"] .probe-answer').isVisible(), "probe reference answer toggles");
 
   // screenshots: figures + full deep-dive blocks (element screenshots, may be tall)
   for (const c of CASES) {
