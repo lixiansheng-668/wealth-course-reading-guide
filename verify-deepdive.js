@@ -14,6 +14,7 @@ const CASES = [
   { id: "lesson-9", steps: 6, texts: ["8.7 万亿", "老宅"] },
   { id: "lesson-10", steps: 6, texts: ["9.9 元", "河流改道"] },
   { id: "lesson-11", steps: 5, texts: ["5 个月", "隔水舱"] },
+  { id: "lesson-12", steps: 5, texts: ["三行假数据", "油表"] },
 ];
 
 const URL = "http://127.0.0.1:8931/index.html";
