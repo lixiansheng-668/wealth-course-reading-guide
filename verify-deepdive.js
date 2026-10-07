@@ -10,6 +10,8 @@ const CASES = [
   { id: "lesson-5", steps: 5, texts: ["12 年", "全镇一起还房贷"] },
   { id: "lesson-6", steps: 6, texts: ["30 倍杠杆", "担保书"] },
   { id: "lesson-7", steps: 7, texts: ["没有发生的收入", "反向运行的扶梯"] },
+  { id: "lesson-8", steps: 6, texts: ["小李", "米缸"] },
+  { id: "lesson-9", steps: 6, texts: ["8.7 万亿", "老宅"] },
 ];
 
 const URL = "http://127.0.0.1:8931/index.html";
