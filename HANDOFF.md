@@ -12,10 +12,9 @@
 - **Git**：`origin = https://github.com/lixiansheng-668/wealth-course-reading-guide.git`，`main` 跟踪 `origin/main`。
 - **发布 = 推送 main**：GitHub Pages 已开启，push 后自动上线。
   线上地址：`https://lixiansheng-668.github.io/wealth-course-reading-guide/`
-  （2026-10-07 核验：线上仍是**旧版**，不含详解区。）
-- **交接时刻的本地状态（重要）**：
-  - `M index.html`、`M styles.css` — 第 1、3 课详解样板，**已验收但未提交**；
-  - `?? verify-deepdive.js` — 验证脚本，未提交；
+  （2026-10-07 更新：样板已随 `d6f143a` 上线；同日第 0、2 课详解铺开，线上为 0–3 课详解版。）
+- **交接时刻的本地状态（历史，已了结）**：
+  - 交接文档所记「已验收未提交」的样板改动，已于交接当天由 mimo 提交推送（commit `d6f143a`，仅含 index.html / styles.css / verify-deepdive.js / HANDOFF.md，无杂文件）；
   - **无关文件，永远不要提交**：`video_build/`、`一斗米四钱银_崩盘讲解.mp4`、`视频脚本_崩盘_分镜.md`、`nx-nco-explainer.svg`、`gh_login.txt`、`gh_login_err.txt`（登录痕迹，涉敏）。
 
 ---
@@ -26,10 +25,11 @@
 
 | 课程 | 状态 |
 |---|---|
+| 第 0 课（怎么学经济学，6 箭头） | ✅ 2026-10-07 ZCode 铺开（新补经济循环逻辑链） |
 | 第 1 课（为什么会衰退，6 箭头） | ✅ 详解已写，用户验收「还不错」 |
-| 第 3 课（经济泡沫，9 箭头） | ✅ 同上 |
-| 第 2 课（资产·负债·现金流） | ⏸ 用户曾说「先不补」，**是否纳入全量铺开 = 【需确认】** |
-| 第 0、4–12 课 | 未动，等铺开 |
+| 第 2 课（资产·负债·现金流，5 箭头） | ✅ 用户确认纳入；2026-10-07 铺开（新补现金流逻辑链） |
+| 第 3 课（经济泡沫，9 箭头） | ✅ 详解已写，用户验收「还不错」 |
+| 第 4–12 课 | 未动，等铺开（下一批：第 4、5 课） |
 
 ### 2.2 详解配方（每课照此复制）
 
@@ -78,16 +78,16 @@
 
 ## 3. 验证流程（全绿才算完成，不可跳过）
 
-```powershell
+```bash
 # 1) 起临时本地服务（playwright-cli 禁止 file:// 协议）
-Start-Process -FilePath "$env:MIMO_PYTHON" -ArgumentList "-m","http.server","8931","--bind","127.0.0.1" `
-  -WorkingDirectory (Get-Location) -WindowStyle Hidden   # 用完 Stop-Process 关掉
+python -m http.server 8931 --bind 127.0.0.1   # 在项目根目录后台起，用完关掉
 
-# 2) 全量断言 + 截图
-& $env:MIMO_NODE verify-deepdive.js    # 期望输出 17 行 PASS + ALL PASS
-
-# 3) 移动端溢出必须为 0（375px 视口，测 scrollWidth-clientWidth）
+# 2) 全量断言 + 截图（ZCode 环境没有 $MIMO_NODE，直接用 node）
+node verify-deepdive.js   # 期望 ALL PASS（4 课时 34 checks；每铺一课在 CASES 加一行，+7 checks）
 ```
+
+- `verify-deepdive.js` 已改为**数据驱动**：顶部 `CASES` 表每课一行（id / why-steps 数 / 关键词），
+  并内置 375px 溢出检查（必须为 0）与桌面/移动截图输出。
 
 - `verify-deepdive.js` 顶部 require 了 npx 缓存里的 playwright 绝对路径。
   若路径失效（缓存被清），重新定位：
@@ -113,12 +113,13 @@ Start-Process -FilePath "$env:MIMO_PYTHON" -ArgumentList "-m","http.server","893
 ## 5. 任务清单与决策点
 
 **【已定 · 直接执行】**
-- [ ] 铺开第 0、4–12 课详解（配方 = 2.2，样板 = 第 1、3 课）
+- [x] 首次接手先把当前未提交的样板改动 commit + push（mimo 已于交接当天完成，`d6f143a`）
+- [x] 第 0、2 课详解铺开（2026-10-07，ZCode 第一批；第 2 课纳入已经用户确认）
+- [ ] 铺开第 4–12 课详解（配方 = 2.2，样板 = 第 1、3 课）
 - [ ] 每完成 1–2 课：跑第 3 节验证 → 第 4 节提交推送上线 → 给用户看
-- [ ] 首次接手先把当前未提交的样板改动 commit + push（除非用户另有指示）
 
 **【需与用户单独确认后再动】**
-- [ ] 第 2 课是否纳入（用户 2026-10-07 曾说「先不补」，后来的对话可能改变主意）
+- [x] 第 2 课是否纳入（用户 2026-10-07 确认：纳入，一起铺开）
 - [ ] 全量完成后的 badge / `section-desc` 文案清理
 - [ ] 任何结构调整、样式改版、内容口径变化
 
