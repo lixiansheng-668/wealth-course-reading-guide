@@ -641,6 +641,10 @@ a:hover {
 .dot.china { background: #8b5e3c; }
 .dot.defense { background: var(--sage); }
 
+.lessons-main {
+  min-width: 0;
+}
+
 .lessons-main .section-head {
   margin-bottom: 1.5rem;
 }
@@ -1693,6 +1697,196 @@ a:hover {
 
   .lesson-done {
     grid-column: 1;
+  }
+}
+
+/* ——— deep dive 铺开讲解 ——— */
+.deep-dive {
+  margin: 0.25rem 0 1.5rem;
+  padding: 1.35rem 1.4rem 1.5rem;
+  background: var(--paper-soft);
+  border: 1px solid var(--rule-strong);
+  border-top: 3px solid var(--rust);
+}
+
+.dd-label {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--rust);
+}
+
+.dd-intro {
+  max-width: 42rem;
+  color: var(--ink-soft);
+}
+
+.why-steps {
+  list-style: none;
+  counter-reset: whys;
+  padding: 0 !important;
+  margin: 0 0 1.5rem !important;
+}
+
+.why-steps li {
+  position: relative;
+  margin-top: 0 !important;
+  padding: 1rem 0 1rem 3rem;
+  border-top: 1px dashed var(--rule);
+  counter-increment: whys;
+}
+
+.why-steps li::before {
+  content: counter(whys);
+  position: absolute;
+  left: 0;
+  top: 1.05rem;
+  width: 1.85rem;
+  height: 1.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rust);
+  background: var(--paper);
+  color: var(--rust);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+}
+
+.why-node {
+  font-family: var(--font-display);
+  font-size: 1.04rem;
+  font-weight: 600;
+  margin: 0 0 0.45rem;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+.why-steps p {
+  margin: 0 0 0.55rem;
+  color: var(--ink-soft);
+}
+
+.why-steps p:last-child {
+  margin-bottom: 0;
+}
+
+.why-key {
+  color: var(--ink) !important;
+}
+
+.why-key span {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--rust);
+  border: 1px solid var(--rust-soft);
+  padding: 0.05rem 0.4rem;
+  margin-right: 0.5rem;
+  vertical-align: 0.08em;
+}
+
+.dd-box {
+  margin: 0 0 1.15rem;
+  padding: 1.05rem 1.15rem 1.1rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.dd-box-label {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--slate);
+}
+
+.dd-box.example {
+  border-left: 3px solid var(--slate);
+}
+
+.dd-box.analogy {
+  border-left: 3px solid var(--sage);
+  background: var(--safe-bg);
+}
+
+.dd-box.misread {
+  border-left: 3px solid var(--rust);
+  background: var(--warn-bg);
+}
+
+.dd-box > p:last-child {
+  margin-bottom: 0;
+}
+
+.dd-box .simple-table {
+  margin: 0.5rem 0 0.35rem;
+}
+
+.dd-box .simple-table th {
+  background: var(--paper-deep);
+}
+
+.dd-steps {
+  margin-bottom: 0.5rem;
+}
+
+.dd-steps li + li {
+  margin-top: 0.45rem;
+}
+
+.dd-steps strong {
+  color: var(--ink);
+}
+
+.dd-box.misread ul {
+  margin-bottom: 0;
+}
+
+.dd-box.misread li + li {
+  margin-top: 0.55rem;
+}
+
+.dd-figure {
+  margin: 0 0 1.25rem;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+
+.dd-figure svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.dd-fig-cap {
+  margin: 0;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--slate);
+}
+
+.dd-fig-note {
+  margin: 0 !important;
+  padding: 0.7rem 0.9rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 640px) {
+  .deep-dive {
+    padding: 1.1rem 0.9rem 1.2rem;
+  }
+
+  .why-steps li {
+    padding-left: 2.55rem;
   }
 }
 
