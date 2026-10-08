@@ -89,6 +89,39 @@ function assert(cond, msg) {
   console.log("PASS: mobile screenshots saved");
   passed++;
 
+  // share feature: button builds url, share mode shows exactly one lesson
+  page.on("popup", (pop) => pop.close().catch(() => {}));
+  await page.locator("#lesson-0 .lesson-share").click();
+  const shareUrl = await page.locator("#lesson-0 .lesson-share").getAttribute("data-share-url");
+  assert(shareUrl && shareUrl.includes("?share=0"), "share button builds ?share=0 url (" + shareUrl + ")");
+
+  const sp = await browser.newPage({ viewport: { width: 375, height: 800 } });
+  await sp.goto(URL + "?share=3", { waitUntil: "load" });
+  const sm = await sp.evaluate(() => {
+    const visible = [...document.querySelectorAll(".lesson")].filter((e) => e.offsetParent !== null);
+    return {
+      visibleCount: visible.length,
+      visibleId: visible[0] && visible[0].id,
+      heroHidden: !document.querySelector(".hero").offsetParent,
+      ctaVisible: !!document.querySelector(".share-cta").offsetParent,
+      title: document.title,
+      shareBtns: document.querySelectorAll(".lesson-share").length,
+      whySteps: document.querySelectorAll(".lesson.share-target .why-steps > li").length,
+    };
+  });
+  assert(sm.visibleCount === 1 && sm.visibleId === "lesson-3", "share mode shows only lesson-3 (got " + sm.visibleId + ")");
+  assert(sm.heroHidden, "share mode hides hero");
+  assert(sm.ctaVisible, "share mode shows 查看全部课程 cta");
+  assert(sm.title.includes("第 3 课") && sm.title.includes("泡沫"), "share mode sets lesson title (" + sm.title + ")");
+  assert(sm.shareBtns === 0, "share mode has no share buttons injected");
+  assert(sm.whySteps === 9, "share mode renders lesson-3 content (9 why-steps)");
+  await sp.screenshot({ path: "shot-share-mode.png" });
+
+  await sp.goto(URL + "?share=99", { waitUntil: "load" });
+  const invalid = await sp.evaluate(() => !!document.querySelector(".hero").offsetParent);
+  assert(invalid, "invalid share param falls back to full site");
+  await sp.close();
+
   await browser.close();
   console.log("ALL PASS (" + passed + " checks)");
 })().catch((e) => {

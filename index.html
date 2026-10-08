@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>经济下行时代财富课 · 配套阅读指南</title>
   <meta name="description" content="12课系统课程 · 6个月可执行路径 · 面向经济学小白的经济下行期财富课阅读与思考指南" />
+  <script>
+    /* 分享模式：?share=N 时立刻标记 html，配合 CSS 在首帧前只保留单课 */
+    (function () {
+      var m = /[?&]share=(\d+)/.exec(location.search);
+      if (!m) return;
+      var n = parseInt(m[1], 10);
+      if (n < 0 || n > 12) return;
+      document.documentElement.className += " share-mode";
+      document.documentElement.setAttribute("data-share", String(n));
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -23,6 +34,7 @@
         <a href="#plan">六个月计划</a>
         <a href="#dashboard">监测表</a>
       </nav>
+      <a class="share-cta" href="index.html">查看全部课程</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="side-nav" aria-label="打开课节目录">
         <span></span><span></span>
       </button>

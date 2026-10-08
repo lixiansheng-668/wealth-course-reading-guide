@@ -1,4 +1,24 @@
 (function () {
+  /* ——— share mode (?share=N) ——— */
+  var shareAttr = document.documentElement.getAttribute("data-share");
+  var shareLessonId = null;
+  if (shareAttr !== null) {
+    var shareTarget = document.getElementById("lesson-" + shareAttr);
+    if (shareTarget) {
+      shareLessonId = shareTarget.id;
+      shareTarget.classList.add("share-target");
+      var shareH3 = shareTarget.querySelector("h3");
+      if (shareH3) {
+        document.title = "第 " + parseInt(shareAttr, 10) + " 课 · " + shareH3.textContent.trim() + " | 财富课";
+      }
+      var brandLink = document.querySelector(".brand");
+      if (brandLink) brandLink.setAttribute("href", "index.html");
+    } else {
+      document.documentElement.classList.remove("share-mode");
+      document.documentElement.removeAttribute("data-share");
+    }
+  }
+
   var store = window.WealthStore;
   if (!store) return;
 
@@ -593,9 +613,77 @@
     }
   }
 
-  initProgress();
+  /* ——— share buttons ——— */
+  function legacyCopy(text) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(
+        function () { return true; },
+        function () { return legacyCopy(text); }
+      );
+    }
+    return Promise.resolve(legacyCopy(text));
+  }
+
+  function shareUrlFor(id) {
+    var url = new URL(window.location.href);
+    url.search = "?share=" + id;
+    url.hash = "";
+    return url.toString();
+  }
+
+  function initShareButtons() {
+    if (shareLessonId) return;
+    lessons.forEach(function (lesson) {
+      var id = (lesson.id || "").replace("lesson-", "");
+      var head = lesson.querySelector(".lesson-head");
+      if (!head) return;
+      var btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "lesson-share";
+      btn.textContent = "分享本课";
+      btn.addEventListener("click", function () {
+        var href = shareUrlFor(id);
+        btn.dataset.shareUrl = href;
+        copyText(href).then(function (ok) {
+          if (ok) {
+            btn.textContent = "链接已复制";
+            btn.classList.add("is-copied");
+            setTimeout(function () {
+              btn.textContent = "分享本课";
+              btn.classList.remove("is-copied");
+            }, 2200);
+          } else {
+            window.open(href, "_blank", "noopener");
+          }
+        });
+      });
+      head.appendChild(btn);
+    });
+  }
+
+  if (!shareLessonId) {
+    initProgress();
+    initDashboard();
+  }
   initProbes();
   initRunway();
   initChains();
-  initDashboard();
+  initShareButtons();
 })();

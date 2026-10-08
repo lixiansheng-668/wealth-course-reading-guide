@@ -658,6 +658,7 @@ a:hover {
 }
 
 .lesson-head {
+  position: relative;
   display: grid;
   grid-template-columns: 3.5rem 1fr;
   gap: 0.75rem 1rem;
@@ -1890,6 +1891,81 @@ a:hover {
   }
 }
 
+/* ——— share 分享模式（?share=N 单课页） ——— */
+.share-cta {
+  display: none;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.share-cta:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.lesson-share {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  min-height: 32px;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  background: var(--paper-soft);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.lesson-share:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
+.lesson-share.is-copied {
+  border-color: var(--sage);
+  color: var(--sage);
+}
+
+html.share-mode .top-nav,
+html.share-mode .nav-toggle,
+html.share-mode .hero,
+html.share-mode .principles,
+html.share-mode .books,
+html.share-mode .side-nav,
+html.share-mode .plan,
+html.share-mode .dashboard,
+html.share-mode .closing,
+html.share-mode .lessons-main > .section-head,
+html.share-mode .progress-panel,
+html.share-mode .lesson:not(.share-target) {
+  display: none !important;
+}
+
+html.share-mode .lessons-layout {
+  grid-template-columns: 1fr;
+}
+
+html.share-mode .share-cta {
+  display: inline-flex;
+  margin-left: auto;
+}
+
+@media (max-width: 640px) {
+  .lesson-share {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
 /* print: dashboard only-friendly */
 @media print {
   .topbar,
@@ -1902,6 +1978,7 @@ a:hover {
   .probe-reveal,
   .chain-controls,
   .lesson-done,
+  .lesson-share,
   .site-footer,
   .nav-toggle {
     display: none !important;
